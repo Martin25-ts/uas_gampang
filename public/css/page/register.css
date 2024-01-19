@@ -1,0 +1,68 @@
+main{
+    width: 100%;
+    height: 77.5%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.register-container{
+    width: 95%;
+    height: fit-content;
+}
+
+.register-container h1{
+    margin: 2% 0;
+    font-size: 3.2rem;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.register-container .register-form,
+.register-form form{
+    width: 100%;
+    height: 100%;
+}
+
+.form-container{
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 5%;
+}
+
+.form-container .left-form,
+.form-container .right-form{
+    width: 47%;
+}
+
+.left-form div,
+.right-form div{
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+.left-form div label,
+.right-form div label{
+    font-size: 1.7rem;
+}
+
+.left-form div input,
+.right-form div input,
+.right-form div select{
+    width: 52%;
+}
+
+.form-action{
+    text-align: center;
+}
+
+.form-action button{
+    padding: 10px 5%;
+    border: none;
+    background-color: yellow;
+}
+
+

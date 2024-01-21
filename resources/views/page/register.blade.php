@@ -11,7 +11,8 @@
         <div class="register-container">
             <h1>Register</h1>
             <div class="register-form">
-                <form action="">
+                <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-container">
                         <div class="left-form">
                             <div class="firstname">
@@ -25,11 +26,11 @@
                             <div class="gender">
                                 <label for="gender">Gender: </label>
                                 <div class="gender-male">
-                                    <input type="radio" name="gender" id="male">
+                                    <input type="radio" name="gender" id="male" value="male">
                                     Male
                                 </div>
                                 <div class="gender-female">
-                                    <input type="radio" name="gender" id="female">
+                                    <input type="radio" name="gender" id="female" value="female">
                                     Female
                                 </div>
 
@@ -48,8 +49,9 @@
                                 <label for="role">Role: </label>
                                 <select name="role" id="role">
                                     <option value="null"></option>
-                                    <option value="user">User</option>
-                                    <option value="admin">Admin</option>
+                                    @foreach ($roles as $role)
+                                        <option value="{{$role->role_id}}">{{$role->role}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="picture">
@@ -57,8 +59,8 @@
                                 <input type="file" name="picture" id="picture">
                             </div>
                             <div class="confirmpassword">
-                                <label for="confirmpassword">Confirm Password: </label>
-                                <input type="password" name="confirmpassword" id="confirmpassword">
+                                <label for="password_confirmation">Confirm Password: </label>
+                                <input type="password" name="password_confirmation" id="password_confirmation" required>
                             </div>
                         </div>
                     </div>
@@ -66,7 +68,7 @@
                     <div class="form-action">
                         <button type="submit">Submit</button>
                         <br>
-                        <a href="{{ route('login') }}">Already have an account? click here to log in</a>
+                        <a href="{{ route('loginPage') }}">Already have an account? click here to log in</a>
                     </div>
 
                 </form>

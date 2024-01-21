@@ -8,6 +8,10 @@
 
 @section('content')
     <main>
-        @include('layout.hasntAuth')
+        @auth
+            @include('layout.hasAuth')
+        @else
+            @include('layout.hasntAuth')
+        @endauth
     </main>
 @endsection

@@ -48,6 +48,14 @@ nav{
     padding: 5px;
 }
 
+.nav-button form button{
+    border: none;
+    background-color: yellow;
+    font-size: 2rem;
+    color: black;
+    padding: 5px;
+}
+
 
 /* Footer Saction */
 footer{

@@ -6,6 +6,10 @@ header{
     height: 50px;
     align-items: center;
     background-color: yellow;
+
+    margin-bottom: 5vh;
+
+
 }
 
 
@@ -15,3 +19,62 @@ header a{
     font-weight: bold;
     font-size: 1.5rem;
 }
+
+main{
+    width: 100%;
+    padding-bottom: 5%;
+
+}
+
+
+section{
+    width: 100%;
+    height: fit-content;
+
+
+    display: flex;
+    justify-content: center;
+}
+
+.product-container{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-container .product{
+    text-align: center;
+    width: 15%;
+}
+
+.product img{
+    width: 90%;
+    height: auto;
+}
+
+.pagination{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+
+    font-size: 1.4rem;
+}
+
+.pagination .page{
+    width: fit-content;
+}
+
+
+.pagination .page a{
+    padding-right: 2px;
+
+}
+
+.active{
+    text-decoration: none;
+    font-weight: bolder;
+    color: black;
+}
+
+

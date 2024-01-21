@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{-- css main buat nampung main css kaya navbar sama footer sisanya bikin css file sendiri aja --}}
     <link rel="stylesheet" href="{{ asset('css/page/main.css') }}">
-
     @auth
         <link rel="stylesheet" href="{{ asset('css/layout/hasAuth.css') }}">
+    @else
+        <link rel="stylesheet" href="{{ asset('css/layout/hasntAuth.css') }}">
     @endauth
     {{--
         stack itu buat masukin css file di sini coba liat aja di file css nani ata push
@@ -50,7 +51,7 @@
     @auth
         <header>
             <a href="{{ route('dashboard-log', ['page'=>1]) }}">Home</a>
-            <a href="">Cart</a>
+            <a href="{{ route('cartPage') }}">Cart</a>
             <a href="">Profile</a>
             @if (Auth::user()->role->role == "Admin")
                 <a href="">Account Maintenance</a>
@@ -66,9 +67,9 @@
 
     {{--
         ini sama kaya css di atas tapi yang ini push js filenya
-        --}}
-    @stack('js')
+    --}}
 
+    @stack('js')
     @if (session('error'))
         <script>
             // Menampilkan pesan kesalahan sebagai alert

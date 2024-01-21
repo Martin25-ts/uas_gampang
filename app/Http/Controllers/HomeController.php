@@ -15,17 +15,42 @@ class HomeController extends Controller
 
     public function homePageHashAuth(Request $request){
         $page = $request->page;
-        $listproduct = $this->getAllProduct($page);
-        return view('page.home', compact('page', 'listproduct'));
+
+        $getAllProduct = $this->getAllProduct($page);
+        $listproduct = $getAllProduct['products'];
+        $pagination = $getAllProduct['pagination'];
+
+
+
+        return view('page.home', compact('page', 'listproduct', 'pagination'));
     }
 
 
 
-
+    /*
+        ini function buat dapetin info product sekalian ngerturn
+        banyak pagenya buat number paginationnya
+    */
     public function getAllProduct($pagenum){
-        $products = Product::paginate(10, ['*'], 'page', intval($pagenum) );
 
-        return $products;
+        $products = Product::paginate(10, ['*'], 'page', intval($pagenum));
+        $pagination = Product::count();
+
+        return [
+            'products' => $products,
+            'pagination' => ceil($pagination / 10)
+        ];
     }
+
+
+
+    public function productdetailPage(Request $request){
+        $product_id = $request->id;
+
+        $product = Product::find($product_id);
+        return view('page.productdetail', compact('product'));
+    }
+
+
 
 }

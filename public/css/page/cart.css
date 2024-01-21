@@ -1,0 +1,84 @@
+
+main{
+
+    /* max-height: 100%; */
+    display: flex;
+    justify-content: center;
+
+    padding-bottom: 10%;
+}
+
+.cart-container{
+    width: 80%;
+
+
+
+}
+
+.cart-container h1{
+    font-size: 2.6rem;
+    text-decoration: underline;
+
+
+}
+
+.cart-container .list-cart{
+
+}
+
+.list-cart .cart{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart img{
+    width: 22%;
+}
+
+.cart span{
+    width: 22%;
+    font-size: 2.7rem;
+}
+
+.cart form{
+    width: 22%;
+    text-align: center;
+
+}
+
+.cart form button{
+    font-size: 1.7rem;
+    background-color: transparent;
+    border: none;
+    color: blue;
+    text-decoration: underline;
+}
+
+
+.result-pay{
+    margin-top: 20px;
+    font-size: 2rem;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: end;
+    gap: 3%;
+}
+
+.result-pay form{
+    display: flex;
+    align-items: center;
+}
+
+.result-pay form button{
+   padding: 20px 50px;
+   font-size: 1.7rem;
+   font-weight: bold;
+
+   border: none;
+   background-color: yellow;
+}

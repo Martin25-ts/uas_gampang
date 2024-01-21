@@ -7,7 +7,7 @@
 @endpush
 
 @section('content')
-    <main>
+    <main style="text-align: unset">
         <div class="register-container">
             <h1>Register</h1>
             <div class="register-form">

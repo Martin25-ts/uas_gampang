@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -33,8 +34,19 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::middleware('auth.custom')->group(function () {
+
+    Route::get('/cart', [OrderController::class, 'cartPage'])->name('cartPage');
+
     Route::get('/{page}', [HomeController::class, 'homePageHashAuth'])->name('dashboard-log');
+
+    Route::get('/detail/{id}', [HomeController::class , 'productdetailPage'])->name('detail-product');
+    Route::post('/add-to-cart/{id}', [OrderController::class, 'addToCart'])->name('addtocart');
+    Route::delete('/remove-cart/{id}', [OrderController::class, 'deleteCart'])->name('deleteCart');
+    Route::post('/checkout', [OrderController::class, 'checkOut'])->name('checkout');
+
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
 });
 
 
